@@ -1,0 +1,31 @@
+{
+  "name": "krkabol_docker-nette",
+  "version": "0.0.1",
+  "description": "Public Nette/Docker prototype.",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-es2015-ie": "^6.7.0",
+    "babel-preset-es2015-without-strict": "0.0.4",
+    "bower": "^1.8.2",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^7.0.0",
+    "grunt-bower-concat": "^1.0.0",
+    "grunt-cli": "^1.2.0",
+    "grunt-concat-css": "^0.3.2",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-cssmin": "^2.2.1",
+    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0",
+    "load-grunt-tasks": "^3.5.2",
+    "uglify-es": "^3.3.5",
+    "webpack": "^3.10.0",
+    "bootstrap": "^4.0.0",
+    "jquery": "^3.2.1",
+    "popper.js": "^1.12.9"
+  }
+}

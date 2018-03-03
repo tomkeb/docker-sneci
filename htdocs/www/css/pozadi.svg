@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="20"
+   width="20"
+   version="1.1"
+   id="svg2"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="pozadi.svg">
+  <defs
+     id="defs18" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     id="namedview16"
+     showgrid="true"
+     inkscape:zoom="16"
+     inkscape:cx="14.496703"
+     inkscape:cy="10.910461"
+     inkscape:current-layer="svg2"
+     inkscape:snap-bbox="true"
+     inkscape:window-x="-8"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata4">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     transform="translate(0,-1032.3622)"
+     id="g6">
+    <rect
+       style="enable-background:accumulate;color:#000000;fill:#e4e9f0;fill-opacity:1"
+       transform="translate(0,1032.3622)"
+       height="20"
+       width="20"
+       y="0"
+       x="0"
+       id="rect8"
+       fill-rule="nonzero"
+       fill="#241f1c" />
+    <path
+       id="path2988"
+       style="enable-background:accumulate;color:#000000;fill:#f1f4f7;fill-opacity:1"
+       d="m15,12.5a2.5,2.5,0,1,1,-5,0,2.5,2.5,0,1,1,5,0z"
+       transform="matrix(1.6,0,0,1.6,-10,1022.3622)"
+       fill-rule="nonzero"
+       fill="#332c27" />
+    <use
+       id="use2994"
+       xlink:href="#path2988"
+       transform="translate(-10,-10)"
+       height="20"
+       width="20"
+       y="0"
+       x="0" />
+    <use
+       id="use2996"
+       xlink:href="#use2994"
+       transform="translate(20,0)"
+       height="20"
+       width="20"
+       y="0"
+       x="0" />
+    <use
+       id="use2998"
+       xlink:href="#use2996"
+       transform="translate(0,20)"
+       height="20"
+       width="20"
+       y="0"
+       x="0" />
+    <use
+       xlink:href="#use2998"
+       transform="translate(-20,0)"
+       height="20"
+       width="20"
+       y="0"
+       x="0"
+       id="use14" />
+  </g>
+</svg>

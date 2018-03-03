@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+				<link rel="stylesheet" href="{$basePath}/css/lib.min.css" type="text/css" />
+				<link rel="stylesheet" href="{$basePath}/css/app.min.css" type="text/css" />
+
+		<link rel="shortcut icon" href="{$basePath}/fav.svg" type="image/svg+xml" />
+		<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+	<title>{ifset title}{include title|stripHtml} • {/ifset}Buližníkové suky Křivoklátska</title>
+</head>
+
+<body>
+		<div class="container embed-responsive">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+<button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Ukázat/skrýt navigaci">
+	<span class="navbar-toggler-icon"></span>
+</button>
+
+	<div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav nav-pills nav-justify">
+		{foreach $menuItems as $item => $link}
+		<li class="nav-item"><a class="nav-link{ifCurrent $link} active{/ifCurrent}" n:href="$link">{$item}</a></li>{if !$iterator->last}<span class="nav-item">/</span>{/if}
+		{/foreach}
+		</ul>
+	</div>
+</nav>
+	</div>
+
+	<div class="container {if $presenter->isLinkCurrent('Snail:')}bg-dark text-light{else}bg-light{/if}">
+
+	{include content}
+
+	</div>
+	<div class="container text-center"><a class="nic" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><p style="margin-top:5px; margin-bottom:0;">2017{php if(date("Y")>2017){$dat="–".date("Y"); echo $dat;} } Tomáš Kebert</p></div>
+
+	 <script src="{$basePath}/js/lib.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+/.idea
+/htdocs/temp/*
+/htdocs/log/*
+/htdocs/vendor
+/htdocs/app/config/config.local.neon
+composer.phar

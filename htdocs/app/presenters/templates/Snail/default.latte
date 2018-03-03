@@ -1,0 +1,14 @@
+{block content}
+<h1 n:block="title">Ulitnatí plži Výrovky</h1>
+<p>Stránka podává informace o druzích plžů, které byly nalezeny na Výrovce. Druhy jsou seskupeny do čeledí dle Horsáka, Juřičkové a&nbsp;Picky (2013). Fotografie je možné stáhnout i&nbsp;<a href="{$basePath}/fotky/celk.jpg">pohromadě ve vysokém rozlišení</a>.</p>
+
+<div class="twocolumns">
+{foreach $snails as $snail}
+    <div style="display: inline-block;">
+    <h3><i>{$snail->latinname|firstUpper}</i> – {$snail->czechname}</h3>
+    <img src="{$baseUrl}/snails/{$snail->abbreviation}.jpg" style="width: 50%" />
+    </div>
+{/foreach}
+</div>
+
+{/block}

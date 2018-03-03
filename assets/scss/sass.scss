@@ -1,0 +1,17 @@
+$theme-colors: (
+  dark: #272c32
+) !default;
+
+$enable-rounded: true;
+
+$font-family-base: "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+body {background: #e4e9f0 url(pozadi.svg) repeat;}
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+$body-color: $black;
+$primary: #825335;
+
+h1 {border-bottom: 0.5rem solid $primary; padding-bottom: 0.1rem; font-weight:600; display: inline-block;}
+h2 {border-bottom: 0.3rem solid $primary; padding-bottom: 0.1rem; font-weight:600; display: inline-block;}
