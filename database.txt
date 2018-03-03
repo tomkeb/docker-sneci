@@ -1,0 +1,17 @@
+-- Adminer 4.6.2 PostgreSQL dump
+
+\connect "quickstart";
+
+DROP TABLE IF EXISTS "snails";
+CREATE TABLE "public"."snails" (
+    "abbreviation" character varying(100) NOT NULL,
+    "czechname" character varying(100) NOT NULL,
+    "latinname" character varying(100) NOT NULL,
+    "description" text NOT NULL
+) WITH (oids = false);
+
+INSERT INTO "snails" ("abbreviation", "czechname", "latinname", "description") VALUES
+('acaacu',	'ostnatka trnitá',	'acanthinula aculeata',	'Toto je můj první šnekejš.'),
+('aegmin',	'sítovka suchomilná',	'aegopinella minor',	'…a druhý šnek.');
+
+-- 2018-03-03 17:52:56.562758+00
