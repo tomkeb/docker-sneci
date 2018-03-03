@@ -1,6 +1,8 @@
 /.idea
 /htdocs/temp/*
 /htdocs/log/*
+/assets/css_vendor/*
+/assets/js_vendor/*
 /htdocs/vendor
 /htdocs/app/config/config.local.neon
 composer.phar
