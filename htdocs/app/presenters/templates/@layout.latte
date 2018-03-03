@@ -23,7 +23,7 @@
 	<div class="collapse navbar-collapse" id="navbarNav">
 		<ul class="navbar-nav nav-pills nav-justify">
 		{foreach $menuItems as $item => $link}
-		<li class="nav-item"><a class="nav-link{ifCurrent $link} active{/ifCurrent}" n:href="$link">{$item}</a></li>{if !$iterator->last}<span class="nav-item">/</span>{/if}
+		<li class="nav-item"><a class="nav-link{ifCurrent $link} active{/ifCurrent}" n:href="$link">{$item}</a></li>{if !$iterator->last}<span class="navbar-text ml-2 mr-2">•</span>{/if}
 		{/foreach}
 		</ul>
 	</div>
