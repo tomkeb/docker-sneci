@@ -29,7 +29,7 @@ concat_css: {
 
         concat: {
                     dist: {
-                        src: ["node_modules/jquery/dist/jquery.slim.min.js","node_modules/popper.js/dist/umd/popper.min.js","node_modules/bootstrap/dist/js/bootstrap.min.js"],
+                        src: ["node_modules/jquery/dist/jquery.min.js","node_modules/popper.js/dist/umd/popper.min.js","node_modules/bootstrap/dist/js/bootstrap.min.js"],
                         dest: "../htdocs/www/js/lib.min.js"
                         // dest: "js_vendor/lib.js"
                     },
@@ -44,7 +44,7 @@ concat_css: {
                 files: [{
                     "expand": true,
                     "cwd": "js",
-                    "src": ["app.js"], //["**/*.js"],
+                    "src": ["*.js"], //["**/*.js"],
                     "dest": "js/compiled/",
                     "ext": "-compiled.js"
                 }]
@@ -65,11 +65,6 @@ concat_css: {
             }
         },
 
-        watch: {
-            files: ['js/*.js', 'scss/sass.css', 'css/*.css', '!*.min.css'],
-            tasks: ['concat','babel','uglify','sass','concat_css','cssmin']
-        },
-
         cssmin: {
             my_target: {
                 files: [{
@@ -81,11 +76,15 @@ concat_css: {
 
                 }]
             }
+        },
+
+        watch: {
+            files: ['js/*.js', 'scss/sass.scss', 'css/custom.css'],
+            tasks: 'default'
         }
 
     });
 
     require('load-grunt-tasks')(grunt);
-
     grunt.registerTask('default', ['concat','babel','uglify','sass','concat_css','cssmin']);
 };

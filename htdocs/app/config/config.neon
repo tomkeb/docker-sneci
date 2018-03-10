@@ -1,6 +1,5 @@
 parameters:
 
-
 application:
 	errorPresenter: Error
 	mapping:
@@ -11,18 +10,19 @@ session:
 
 services:
 	router: App\RouterFactory::createRouter
+	texy: Texy
 
 extensions:
-		console: Kdyby\Console\DI\ConsoleExtension
-		events: Kdyby\Events\DI\EventsExtension
-		annotations: Kdyby\Annotations\DI\AnnotationsExtension
-		doctrine: Kdyby\Doctrine\DI\OrmExtension
+	console: Kdyby\Console\DI\ConsoleExtension
+	events: Kdyby\Events\DI\EventsExtension
+	annotations: Kdyby\Annotations\DI\AnnotationsExtension
+	doctrine: Kdyby\Doctrine\DI\OrmExtension
 
 doctrine:
-	    user: doctrine
-	    password: doctrine
-	    dbname: doctrine
-	    host: server
-	    driver: pdo_pgsql
-	    metadata:
-	        App: %appDir%
+		    user: doctrine
+		    password: doctrine
+		    dbname: doctrine
+		    host: server
+		    driver: pdo_pgsql
+		    metadata:
+		        App: %appDir%

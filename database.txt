@@ -2,16 +2,28 @@
 
 \connect "quickstart";
 
-DROP TABLE IF EXISTS "snails";
-CREATE TABLE "public"."snails" (
-    "abbreviation" character varying(100) NOT NULL,
-    "czechname" character varying(100) NOT NULL,
-    "latinname" character varying(100) NOT NULL,
+DROP TABLE IF EXISTS "families";
+CREATE TABLE "public"."families" (
+    "czechname" character varying(50) NOT NULL,
+    "latinname" character varying(50) NOT NULL,
     "description" text NOT NULL
 ) WITH (oids = false);
 
-INSERT INTO "snails" ("abbreviation", "czechname", "latinname", "description") VALUES
-('acaacu',	'ostnatka trnitá',	'acanthinula aculeata',	'Toto je můj první šnekejš.'),
-('aegmin',	'sítovka suchomilná',	'aegopinella minor',	'…a druhý šnek.');
+INSERT INTO "families" ("czechname", "latinname", "description") VALUES
+('oblovkovití',	'cochlicopidae',	''),
+('skleněnkovití',	'vitrinidae',	'Plži této čeledi mají redukovanou schránku, do které se většinou již nedokáží zcela zatáhnout. Objevují se zejména na podzim.'),
+('závornatkovití',	'clausiliidae',	'Název čeledi je odvozen od pojmenování destičky (závorka, *clausilium*) umístěné v posledním závitu schránky. Závorka je pružně připevněna k cívce a v případě zatáhnutí plže uzavírá ulitu. Drtivá většina zástupců čeledi závornatkovitých je levotočivá, ale např. na Slovensku žije jediný pravotočivý druh *Alopia bielzi clathrata*. Závornatky jsou plži s protáhlými schránkami, jejich ústí mají typickou strukturu. Podle té je možné určovat jednotlivé druhy (Horsák *et al.* 2013, s. 82). Determinace mladých jedinců je velice složitá, neboť ještě nemají ústí zcela vytvořeno. Jedním z rozlišovacích znaků v ústí schránky je přítomnost drobné rýhy či žlábku, tzv. járku*. Járek může, ale nemusí dosahovat až na samotný okraj ústí.
 
--- 2018-03-03 17:52:56.562758+00
+* V moravských nářečích má význam „stružka pro odtok vody; rýha, žlábek“ (Ústav pro jazyk český AV ČR 2012, s. 308).'),
+('vrásenkovití',	'discidae',	''),
+('síměnkovití',	'carychiidae',	''),
+('kuželíkovití',	'euconulidae',	''),
+('hlemýžďovití',	'helicidae',	''),
+('vlahovkovití',	'hygromiidae',	''),
+('zemounovití',	'zonitidae',	''),
+('boděnkovití',	'punctidae',	''),
+('údolníčkovití',	'valloniidae',	''),
+('vrkočovití',	'vertiginidae',	'');
+
+-- 2018-03-10 10:11:16.428081+00
+

@@ -1,14 +1,57 @@
 {block content}
+
 <h1 n:block="title">Ulitnatí plži Výrovky</h1>
 <p>Stránka podává informace o druzích plžů, které byly nalezeny na Výrovce. Druhy jsou seskupeny do čeledí dle Horsáka, Juřičkové a&nbsp;Picky (2013). Fotografie je možné stáhnout i&nbsp;<a href="{$basePath}/fotky/celk.jpg">pohromadě ve vysokém rozlišení</a>.</p>
 
-<div class="twocolumns">
-{foreach $snails as $snail}
-    <div style="display: inline-block;">
-    <h3><i>{$snail->latinname|firstUpper}</i> – {$snail->czechname}</h3>
-    <img src="{$baseUrl}/snails/{$snail->abbreviation}.jpg" style="width: 50%" />
-    </div>
+<nav id="families">
+<ul class="nav nav-pills">
+{foreach $families as $family}
+<li class="nav-item"><a class="nav-link" href="#{$family->latinname}">{$family->latinname|firstUpper}</a></li>
 {/foreach}
+</ul>
+</nav>
+
+<div class="twocolumns">
+{foreach $families as $family}
+{var $i = 1}
+<div class="d-inline-block"><h2 id="{$family->latinname}">{$family->latinname|firstUpper}&nbsp;– {$family->czechname}</h2>
+{if $family->description}{$family->description|texy}{/if}
+
+{foreach $snails as $snail}
+{if $snail->family == $family->latinname}
+{php preg_match_all('/\b[a-zA-Z]{3}/', $snail->latinname, $matches); $shortcut = strtolower($matches[0][0]).strtolower($matches[0][1]);}
+<div class="d-inline-block">
+<img src="{$baseUrl}/snails/{$shortcut}.jpg" style="max-width: 50%; max-height: {16*$snail->scale|noescape}rem;" class="float-md-right ml-3 d-none d-lg-block" />
+<h3 id="{$shortcut}"><i>{$snail->latinname|firstUpper}</i>&nbsp;– {$snail->czechname}</h3>
+
+<img src="{$baseUrl}/snails/{$shortcut}.jpg" style="max-width: 100%; max-height: 11rem" class="d-block d-lg-none mt-3 mb-3 ml-auto mr-auto" />
+
+{$snail->description|texy}
+</div>
+{if $i == 1}</div>{/if}{php $i++}
+{/if}
+
+{/foreach}
+{/foreach}
+
+</div>
+
+<h2>Použité zdroje</h2>
+  <div class="hyphens">
+  <p>ANIMALBASE PROJECT GROUP, 2005. <i>AnimalBase</i> [online] [vid. 2016-08-14]. Dostupné z: <a href="http://www.animalbase.uni-goettingen.de/zooweb/servlet/AnimalBase/AnimalBase/search">http://www.animalbase.uni-goettingen.de/zoo&shy;web/servlet/AnimalBase/AnimalBase/search</a></p>
+  <p>ARNASON, Einar a P. R. GRANT, 1976. Climatic Selection in <i>Cepaea hortensis</i> at the Northern Limit of Its Range in Iceland. <i>Evolution</i> [online]. 30(3), 499–508. ISSN 0014-3820. Dostupné z: doi:10.2307/2407574</p>
+  <p>BAUR, Bruno, 1989. Growth and Reproduction of the Minute Land Snail <i>Punctum pygmaeum</i> (Draparnaud). <i>Journal of Molluscan Studies</i> [online]. 8. 10., 55(3), 383–387. ISSN 0260-1230, 1464-3766. Dostupné z: doi:10.1093/mollus/55.3.383</p>
+  <p>BOUCHET, Philippe a Jean-Pierre ROCROI, ed., 2005. Classification and Nomenclator of Gastropod Families. <i>Malacologia –&nbsp;International Journal of Malacology</i> [online]. 47(1–2) [vid. 2016-12-30]. Dostupné z: <a href="http://archive.org/details/malacologia47122005inst">http://archive.org/details/malacologia47122005inst</a></p>
+  <p>EGOROV, Roman, 2015. The first record of introduced snail <i>Cepaea hortensis</i> (Müller, 1774) (Stylommatophora: Helicidae) in the central part of European Russia. <i>Ruthenica</i>. 9., 25(3), 93–97. ISSN 01360027.</p>
+  <p>HORSÁK, Michal, Lucie JUŘIČKOVÁ a Jaroslav PICKA, 2013. <i>Měkkýši České a Slovenské republiky = Molluscs of the Czech and Slovak Republics</i>. Zlín: Kabourek. ISBN 978-80-86447-15-5.</p>
+  <p>JUŘIČKOVÁ, Lucie a Tomáš KUČERA, 2005. Ruins of medieval castles as refuges of interesting land snails in the landscape. In: <i>Contributions to Soil Zoology in Central Europe I.</i> České Budějovice: IBS AS CR, s. 41–46. ISBN 80-86525-04-X.</p>
+  <p>LOŽEK, Vojen, 1975. Přehled měkkýšů Křivoklátska = Übersicht der Wichtiere des Křivoklát-Gebietes. <i>Bohemia centralis</i>. (4).</p>
+  <p>MCALPINE, Donald F. a Robert G. FORSYTH, 2014. Occurrence of the Copse Snail, <i>Arianta arbustorum</i> (Helicidae), on Prince Edward Island: An Addition to the North American Range of a Purported Potential Pest. <i>Northeastern Naturalist</i> [online]. 3., 21(1), N5–N7. ISSN 1092-6194, 1938-5307. Dostupné z: doi:10.1656/045.021.0123</p>
+  <p>PFLEGER, Václav, 1988. <i>Měkkýši</i>. Barevný průvodce. Praha: Artia.</p>
+  <p>ŘÍHOVÁ, Dagmar, Zdeněk JANOVSKÝ a Ondřej KOUKOL, 2014. Fungal communities colonising empty <i>Cepaea hortensis</i> shells differ according to litter type. <i>Fungal Ecology</i> [online]. 1. 4., 8, 66–71. ISSN 1754-5048. Dostupné z: doi:10.1016/j.funeco.2014.01.002</p>
+  <p>ÚSTAV PRO JAZYK ČESKÝ AV ČR, 2011. <i>Slovník spisovného jazyka českého</i> [online] [vid. 2016-08-14]. Dostupné z: <a href="http://ssjc.ujc.cas.cz/search.php?heslo=plamat%C3%BD&where=hesla&hsubstr=no">http://ssjc.ujc.cas.cz/search.php?heslo=plamat%C3%BD&where=hesla&hsubstr=no</a></p>
+  <p>ÚSTAV PRO JAZYK ČESKÝ AV ČR, 2012. <i>Český jazykový atlas 2</i> [online]. Brno: Dialektologické oddělení Ústavu pro jazyk český AV ČR, v. v. i. ISBN 978-80-86496-68-9. Dostupné z: <a href="http://cja.ujc.cas.cz/CJA2/">http://cja.ujc.cas.cz/CJA2/</a></p>
+  <p>WELTER-SCHULTES, F. W., 2012. <i>European non-marine molluscs, a guide for species identification = Bestimmungsbuch für europäische Land- und Süsswassermollusken</i>. Göttingen: Planet Poster Editions. ISBN 978-3-933922-75-5.</p>
 </div>
 
 {/block}

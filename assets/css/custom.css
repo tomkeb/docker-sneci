@@ -1,3 +1,4 @@
 .twocolumns
 {column-count: 2;
-column-width: 12rem;}
+column-width: 20rem;
+column-gap: 2rem;}

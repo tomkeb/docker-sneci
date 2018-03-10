@@ -3,7 +3,7 @@
 namespace App\Presenters;
 
 use Nette;
-
+use Texy;
 
 class SnailPresenter extends BasePresenter
 {
@@ -16,6 +16,7 @@ class SnailPresenter extends BasePresenter
 
   public function renderDefault()
   {
-      $this->template->snails = $this->database->table('snails');
+      $this->template->snails = $this->database->table('snails')->order('latinname');
+      $this->template->families = $this->database->table('families')->order('latinname');
   }
 }

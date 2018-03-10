@@ -12,31 +12,40 @@
 	<title>{ifset title}{include title|stripHtml} • {/ifset}Buližníkové suky Křivoklátska</title>
 </head>
 
-<body>
-		<div class="container embed-responsive">
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body data-spy="scroll" data-target="#families" data-offset="100">
+		<div class="container pl-0 pr-0">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-lg-4 mb-lg-4 rounded shadow">
+
+		<a class="navbar-brand d-lg-none p-0" href="{$basePath}">
+	    <img src="{$basePath}/css/logo.svg" alt="">
+	  </a>
 
 <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Ukázat/skrýt navigaci">
 	<span class="navbar-toggler-icon"></span>
 </button>
 
-	<div class="collapse navbar-collapse" id="navbarNav">
-		<ul class="navbar-nav nav-pills nav-justify">
+	<div class="collapse navbar-collapse pt-3 pt-lg-0" id="navbarNav">
+		<ul class="nav nav-pills">
 		{foreach $menuItems as $item => $link}
-		<li class="nav-item"><a class="nav-link{ifCurrent $link} active{/ifCurrent}" n:href="$link">{$item}</a></li>{if !$iterator->last}<span class="navbar-text ml-2 mr-2">•</span>{/if}
+		<li class="nav-item d-inline"><a class="nav-link{ifCurrent $link} active{/ifCurrent}" n:href="$link">{$item}</a></li>{if !$iterator->last}<span class="navbar-text d-none d-lg-inline">•</span>{/if}
 		{/foreach}
 		</ul>
 	</div>
 </nav>
 	</div>
 
-	<div class="container {if $presenter->isLinkCurrent('Snail:')}bg-dark text-light{else}bg-light{/if}">
+	<div class="container {if $presenter->isLinkCurrent('Snail:')}bg-dark text-light{else}bg-light{/if} content rounded p-2 p-sm-4 shadow">
 
 	{include content}
 
 	</div>
-	<div class="container text-center"><a class="nic" rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><p style="margin-top:5px; margin-bottom:0;">2017{php if(date("Y")>2017){$dat="–".date("Y"); echo $dat;} } Tomáš Kebert</p></div>
 
-	 <script src="{$basePath}/js/lib.min.js"></script>
+	<a id="scroll"></a>
+
+	<div class="container text-center mt-4"><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licence Creative Commons" style="border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg" /></a><p class="mt-1">2017{php if(date("Y")>2017){$dat="–".date("Y"); echo $dat;} } Tomáš Kebert</p></div>
+
+	<script src="{$basePath}/js/lib.min.js"></script>
+	<script src="{$basePath}/js/app.min.js"></script>
+
 </body>
 </html>
