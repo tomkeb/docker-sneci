@@ -19,12 +19,11 @@
 
 {foreach $snails as $snail}
 {if $snail->family == $family->latinname}
-{php preg_match_all('/\b[a-zA-Z]{3}/', $snail->latinname, $matches); $shortcut = strtolower($matches[0][0]).strtolower($matches[0][1]);}
 <div class="d-inline-block">
-<img src="{$baseUrl}/snails/{$shortcut}.jpg" style="max-width: 50%; max-height: {16*$snail->scale|noescape}rem;" class="float-md-right ml-3 d-none d-lg-block" />
-<h3 id="{$shortcut}"><i>{$snail->latinname|firstUpper}</i>&nbsp;– {$snail->czechname}</h3>
+<img src="{$baseUrl}/snails/{$snail->shortcut}.jpg" style="max-width: 50%; max-height: {16*$snail->scale|noescape}rem;" class="float-md-right ml-3 d-none d-lg-block" />
+<h3 id="{$snail->shortcut}"><i>{$snail->latinname|firstUpper}</i>&nbsp;– {$snail->czechname}</h3>
 
-<img src="{$baseUrl}/snails/{$shortcut}.jpg" style="max-width: 100%; max-height: 11rem" class="d-block d-lg-none mt-3 mb-3 ml-auto mr-auto" />
+<img src="{$baseUrl}/snails/{$snail->shortcut}.jpg" style="max-width: 60%; max-height: {13*$snail->scale|noescape}rem" class="d-block d-lg-none mt-3 mb-3 ml-auto mr-auto" />
 
 {$snail->description|texy}
 </div>
