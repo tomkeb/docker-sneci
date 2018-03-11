@@ -10,6 +10,7 @@ session:
 
 services:
 	router: App\RouterFactory::createRouter
+	- App\Model\Services\PhotoDir(%wwwDir%)
 	texy: Texy
 
 extensions:
