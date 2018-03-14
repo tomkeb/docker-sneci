@@ -26,7 +26,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
             'Plži' => 'Snail:',
             'Klíč' => 'Key:',
             'Výukové materiály' => 'Material:',
-            'Fotografie' => 'Photo:',
+            'Fotografie' => 'Pictures:',
             'O stránkách' => 'Contact:',
         );
 

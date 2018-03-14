@@ -1,0 +1,16 @@
+{block content}
+<h1 n:block="title">Fotografie</h1>
+<p>
+Série fotografií z Výrovky je <a href=" https://mega.nz/#!IVNEzbBT!fvbtnYeRHwm8i-17nN2uLZZE9t-dJFR8ZHLYvjhC2OA">ke stažení zde</a>.
+</p>
+
+<div class="text-center">
+{foreach $photoDir->getPhotos() as $photos}<a href="{$basePath.$photos[0]}" class="d-inline-block"><img src="{$basePath.$photos[1]}" style="width: 18rem;" class="m-1"/></a>{/foreach}
+</div>
+
+<div class="text-center">
+size of files in base directory: {$photoDir->getBaseSize()} b<br />
+count of files in base directory: {$photoDir->getBaseCount()}<br />
+total size of files in photo dir: {$photoDir->getTotalSize()} b<br />
+total count of files in photo dir: {$photoDir->getTotalCount()}
+</div>

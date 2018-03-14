@@ -1,0 +1,13 @@
+public function getTotalSize(){
+  $this->getPath('');
+
+  $di = new RecursiveDirectoryIterator($this->partialPath);
+  foreach (new RecursiveIteratorIterator($di) as $filename => $file) {
+    echo $filename . ' - ' . $file->getSize() . ' bytes <br/>';
+  }
+
+}
+
+
+
+total: {$photoDir->getTotalSize()}
