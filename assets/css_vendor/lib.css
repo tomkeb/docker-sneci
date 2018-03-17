@@ -6068,6 +6068,9 @@ a:hover {
   text-decoration: none;
   border-radius: 0.2rem; }
 
+a.photo:hover {
+  background: none; }
+
 .nav .nav-link, .nav .navbar-text {
   color: white;
   text-transform: uppercase;
@@ -6125,11 +6128,21 @@ a:hover {
 #scroll:hover {
   background-color: #6b757f; }
 
+.gallery {
+  width: 25%; }
+
 @media (max-width: 991.98px) {
   h1 {
     font-size: 2rem; }
   .shadow.navbar {
-    box-shadow: none; } }
+    box-shadow: none; }
+  .gallery {
+    width: 33.33%;
+    width: calc(100% / 3); } }
+
+@media (max-width: 767.98px) {
+  .gallery {
+    width: 50%; } }
 
 .nav .nav-link.active {
   font-weight: 900;

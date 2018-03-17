@@ -4,5 +4,6 @@
 /assets/css_vendor/*
 /assets/js_vendor/*
 /htdocs/vendor
+/htdocs/www/photos/*
 /htdocs/app/config/config.local.neon
 composer.phar

@@ -26,6 +26,7 @@ h3 {padding-bottom: 0.1rem; font-weight:600; font-size: 1.4rem;}
 a {color: $primary;}
 .bg-dark a {color: $primary-light;}
 a:hover {color: #ffffff; background: url(tecky.svg) top left repeat $primary; text-decoration: none; border-radius: 0.2rem;}
+a.photo:hover {background: none;}
 
 .nav .nav-link, .nav .navbar-text {color: white; text-transform: uppercase; font-size: 1.3rem; padding-top: 0.2rem; padding-bottom: 0.2rem; padding-left: 0.25rem; padding-right: 0.25rem; margin-left: 0.15rem; margin-right: 0.15rem}
 
@@ -40,10 +41,18 @@ a:hover {color: #ffffff; background: url(tecky.svg) top left repeat $primary; te
 #scroll {display: none; width: 3.5rem; height: 3.5rem; line-height: 3.5rem; position: fixed; right: 1rem; bottom: 1rem; border-radius: 50%; background: #40474e url('sipka.svg') center center no-repeat; background-size: 1.1rem; text-align: center; font-size: 2rem; cursor: pointer; transition: background-color 0.2s;}
 #scroll:hover {background-color: #6b757f;}
 
+.gallery {width: 25%;}
+
 @include media-breakpoint-down(md) {
   h1 {font-size: 2rem;}
   .shadow.navbar {box-shadow: none;}
+  .gallery {width: 33.33%; width: calc(100% / 3);}
 }
+
+@include media-breakpoint-down(sm) {
+  .gallery {width: 50%;}
+}
+
 
 .nav .nav-link.active {font-weight: 900; background: none;}
 .hyphens p {hyphens: auto;}

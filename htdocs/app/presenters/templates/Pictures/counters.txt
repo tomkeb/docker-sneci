@@ -1,0 +1,6 @@
+<div class="text-center mt-5 pt-3 border-top">
+size of files in base directory: {$photoDir->getBaseSize()} b<br />
+count of files in base directory: {$photoDir->getBaseCount()}<br />
+total size of files in photo dir: {$photoDir->getTotalSize()} b<br />
+total count of files in photo dir: {$photoDir->getTotalCount()}
+</div>
