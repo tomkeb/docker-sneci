@@ -11,12 +11,12 @@ class PhotoDir {
   private $partialPath;
   private $fileNames = array();
   private $photos = array();
+    private $diffArray = array();
+  private $scannedDir = array();
+
   private $baseSize;
   private $totalSize;
   private $totalCount;
-
-  private $diffArray = array();
-  private $scannedDir = array();
 
   const PHOTO_DIR = 'photos';
 
@@ -24,33 +24,37 @@ class PhotoDir {
       $this->wwwDir = $wwwDir;
   }
 
-  public function getPath(string $subdirectory){
+  private function getPath(string $subdirectory){
       $this->partialPath = DIRECTORY_SEPARATOR.self::PHOTO_DIR.DIRECTORY_SEPARATOR;
       return $this->wwwDir.$this->partialPath.$subdirectory;
   }
 
-  public function getFileNames(string $path){
+  private function getFileNames(string $path){
       $this->path = $path;
       $this->scannedDir = scandir($this->path);
       foreach ($this->scannedDir as $key => $value){
-        if (strpos($value, ".") == null){$this->diffArray []= $value;}
+        if (strpos($value, ".") == null){$this->diffArray []= $value;} //podle tečky nejde rozeznat, zda je to soubor -> jinak
       }
       $this->fileNames = array_values(array_diff($this->scannedDir, $this->diffArray));
       return $this;
   }
 
-  public function getPhotos(){
-    $this->getFileNames($this->getPath(''));
+  public function getPhotos(string $subdirectory){
+    $this->getFileNames($this->getPath($subdirectory));
 
+    unset($this->photos);
+
+    if (!empty($subdirectory)) {$this->subdirectory = $subdirectory.DIRECTORY_SEPARATOR;}else{$this->subdirectory = NULL;}
     foreach ($this->fileNames as $key => $value) {
-        $this->photos[$key][0] = $this->partialPath.$value;
-        $this->photos[$key][1] = $this->partialPath."thumbnails".DIRECTORY_SEPARATOR.$value;
+        $this->photos[$key][0] = $this->partialPath.$this->subdirectory.$value;
+        $this->photos[$key][1] = $this->partialPath.$this->subdirectory."thumbnails".DIRECTORY_SEPARATOR.$value;
       }
     return $this->photos;
   }
 
   public function getBaseSize(){
     $this->getFileNames($this->getPath(''));
+
     foreach ($this->fileNames as $value) {
         $this->baseSize += filesize($this->path.$value);
       }
@@ -62,7 +66,7 @@ class PhotoDir {
     return count($this->fileNames);
   }
 
-  public function iterate(){
+  private function iterate(){
     $this->getPath('');
     $this->iterator = new \RecursiveIteratorIterator(new \RecursiveDirectoryIterator($this->getPath(''), \RecursiveDirectoryIterator::SKIP_DOTS));
   }
