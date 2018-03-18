@@ -11,7 +11,7 @@ class PhotoDir {
   private $partialPath;
   private $fileNames = array();
   private $photos = array();
-    private $diffArray = array();
+  private $diffArray = array();
   private $scannedDir = array();
 
   private $baseSize;
