@@ -29,11 +29,11 @@ class PhotoDir {
       return $this->wwwDir.$this->partialPath.$subdirectory;
   }
 
-  private function getFileNames(string $path){
+  public function getFileNames(string $path){
       $this->path = $path;
       $this->scannedDir = scandir($this->path);
       foreach ($this->scannedDir as $key => $value){
-        if (strpos($value, ".") == null){$this->diffArray []= $value;} //podle tečky nejde rozeznat, zda je to soubor -> jinak
+        if (!is_file($path.DIRECTORY_SEPARATOR.$value)) {$this->diffArray []= $value;}
       }
       $this->fileNames = array_values(array_diff($this->scannedDir, $this->diffArray));
       return $this;
