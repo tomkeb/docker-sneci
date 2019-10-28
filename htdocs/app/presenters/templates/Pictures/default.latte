@@ -3,7 +3,6 @@
 <p>
 Série fotografií z Výrovky je <a href=" https://mega.nz/#!IVNEzbBT!fvbtnYeRHwm8i-17nN2uLZZE9t-dJFR8ZHLYvjhC2OA">ke stažení zde</a>.
 </p>
-
 <h2>Lokalita</h2>
 <div>
 {foreach $photoDir->getPhotos('') as $photos}<a class="photo" href="{$basePath.$photos[0]}" class="d-inline-block"><img class="p-1 gallery" src="{$basePath.$photos[1]}" /></a>{/foreach}
@@ -14,7 +13,7 @@ Série fotografií z Výrovky je <a href=" https://mega.nz/#!IVNEzbBT!fvbtnYeRHw
 {foreach $photoDir->getPhotos(sber) as $photos}<a class="photo" href="{$basePath.$photos[0]}" class="d-inline-block"><img class="p-1 gallery" src="{$basePath.$photos[1]}" /></a>{/foreach}
 </div>
 
-<div class="text-center mt-5 pt-3 border-top">
+<div class="text-center mt-5 pt-3 border-top d-none">
 size of files in base directory: {$photoDir->getBaseSize()} b<br />
 count of files in base directory: {$photoDir->getBaseCount()}<br />
 total size of files in photo dir: {$photoDir->getTotalSize()} b<br />
